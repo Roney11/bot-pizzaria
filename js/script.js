@@ -22,15 +22,16 @@ function enviarMsm() {
 
         if(text == 1 || text == 2) {
             firstOption()
-        }else {
+
+        }else if(text > 4 && text < 11) {
+        getPedido()
+
+        } else {
             const novoEnvio = document.createElement('p')
             const divPai = document.getElementById('txt')
             divPai.appendChild(novoEnvio)
             const novoTxt = document.createTextNode(`Número inváido!`)
             novoEnvio.appendChild(novoTxt)
-        }
-        if(text > 4 && text < 11) {
-        getPedido()
         }
 
         scroll()
@@ -55,12 +56,14 @@ function msmAuto() {
             divPai.appendChild(novoEnvio)
             const novoTxt = document.createTextNode('Bom Dia!')
             novoEnvio.appendChild(novoTxt)
+
         }else if(horaAtual >= 12 && horaAtual <= 17 ) {
             const novoEnvio = document.createElement('p')
             const divPai = document.getElementById('txt')
             divPai.appendChild(novoEnvio)
             const novoTxt = document.createTextNode('Boa Tarde!')
             novoEnvio.appendChild(novoTxt)
+
         }else {
             const novoEnvio = document.createElement('p')
             const divPai = document.getElementById('txt')
