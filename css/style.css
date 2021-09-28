@@ -12,7 +12,7 @@ img {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-image: url('/img/bg-pizza.jpg');
+    background-image: url('img/bg-pizza.jpg');
     background-size: cover;
     height: 100vh;
 }
@@ -36,6 +36,7 @@ input {
 button {
     padding: 6px 12px;
     background: rgb(180, 45, 45);
+    color: #fff;
 }
 
 .chat {
