@@ -29,8 +29,11 @@ img {
 }
 
 input {
-    width: 85%;
-    padding: 5px 2px ;
+    width: 75%;
+    padding: 10px 4px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
 
 button {
@@ -58,6 +61,18 @@ button {
     border-radius: 50%;
 }
 
+.send {
+ align-items: center;
+ justify-content: space-around;
+}
+
+.send img {
+    width: 12%;
+    height: 10%;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
 .header p {
     margin-left: 15px;
     color: #ccc;
@@ -65,7 +80,7 @@ button {
 }
 
 .txt {
-    height: 83%;
+    height: 84%;
     padding: 0 5px;
     overflow-y: scroll;
 }
@@ -79,6 +94,9 @@ button {
     width: 45%;
     white-space: pre-wrap;
     padding: 10px;
+    font-size: 1.1rem;
+    opacity: 1;
+    animation: msmSlide .7s forwards;
 }
 
 .txt p.cliente {
@@ -87,10 +105,39 @@ button {
     color: #fff;
     text-align: center;
     width: 20%;
+    animation: msmSlide .7s forwards;
+}
+
+.time {
+    display: none;
+    width: 200px;
+    height: 50px;
+    background: #fff; 
+    margin: 0 auto 10px auto;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+@keyframes msmSlide {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
 }
 
 @media (min-width: 500px) {
     .corpo {
         max-width: 500px;
+    }
+    .send img {
+        width: 8%;
+        height: 10%;
+        cursor: pointer;
+        margin-right: 25px;
+    }
+    .txt {
+        height: 87%;
     }
 }

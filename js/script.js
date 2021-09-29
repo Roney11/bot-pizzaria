@@ -112,9 +112,8 @@ const calabresa = '9- pizza sabor Calabresa'
 const chefe = '10- pizza do Chefe'
 
 function firstOption() {
-    const text = document.getElementById('content').value
-    console.log(text)
 
+    const text = document.getElementById('content').value
 
     if(text == 1) {
         const novoEnvio = document.createElement('p')
@@ -148,28 +147,58 @@ function getPedido() {
         const novoEnvio = document.createElement('p')
         const divPai = document.getElementById('txt')
         divPai.appendChild(novoEnvio)
-        const novoTxt = document.createTextNode(`Você escolheu a pizza ${moda}. Seu pedido está sendo preparado`)
+        const novoTxt = document.createTextNode(`Você escolheu a ${moda}. Seu pedido está sendo preparado`)
         novoEnvio.appendChild(novoTxt)
     }
     if(text == 8) {
         const novoEnvio = document.createElement('p')
         const divPai = document.getElementById('txt')
         divPai.appendChild(novoEnvio)
-        const novoTxt = document.createTextNode(`Você escolheu a pizza ${lombo}. Seu pedido está sendo preparado`)
+        const novoTxt = document.createTextNode(`Você escolheu a ${lombo}. Seu pedido está sendo preparado`)
         novoEnvio.appendChild(novoTxt)
     }
     if(text == 9) {
         const novoEnvio = document.createElement('p')
         const divPai = document.getElementById('txt')
         divPai.appendChild(novoEnvio)
-        const novoTxt = document.createTextNode(`Você escolheu a pizza ${calabresa}. Seu pedido está sendo preparado`)
+        const novoTxt = document.createTextNode(`Você escolheu a ${calabresa}. Seu pedido está sendo preparado`)
         novoEnvio.appendChild(novoTxt)
+
     }
     if(text == 10) {
         const novoEnvio = document.createElement('p')
         const divPai = document.getElementById('txt')
         divPai.appendChild(novoEnvio)
-        const novoTxt = document.createTextNode(`Você escolheu a pizza ${chefe}. Seu pedido está sendo preparado`)
+        const novoTxt = document.createTextNode(`Você escolheu a ${chefe}. Seu pedido está sendo preparado`)
         novoEnvio.appendChild(novoTxt)
     }
+
+   var timePedido =  setInterval(() => {
+        time()
+    }, 1000);
+    
+
+}
+
+
+let m = 39
+let s = 59
+function time() {
+    let rest = s -= 1
+
+    document.getElementById('time').style.display = 'block'
+
+    if(rest < 1) {
+        m -=1
+        s += 59
+    }
+    if(m < 0) {
+        document.getElementById('time').style.display = 'none'
+    }
+    
+    formatoS = (rest <10 ? `0${rest}` : rest)
+    formatoM = m < 10 ? `0${m}` : m
+
+    let formatoTotal = `${formatoM}:${formatoS} minutos`
+    document.getElementById('time').innerHTML = `Seu pedido saído em <br> ${formatoTotal}`
 }
